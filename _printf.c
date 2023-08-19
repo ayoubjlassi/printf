@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include<string.h>
 
 void print_buffer(char buffer[], int *buff_ind);
 
@@ -37,6 +38,7 @@ printed_chars++;
 else
 {
 print_buffer(buffer, &buff_ind);
+
 flags = get_flags(format, &j);
 
 width = get_width(format, &j, list);
