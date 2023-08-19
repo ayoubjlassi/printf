@@ -48,6 +48,8 @@ int get_width(const char *format, int *j, va_list list);
 int get_precision(const char *format, int *j, va_list list);
 int get_size(const char *format, int *j);
 
+
+int handle_print(const char *fmt, int *i);
 /*function to print string in reverse */
 
 #endif
