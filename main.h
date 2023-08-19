@@ -52,11 +52,15 @@ int get_precision(const char *format, int *j, va_list list);
 int get_size(const char *format, int *j);
 
 
-int handle_print(const char *fmt, int *i, va_list list, char buffer[], int flags, int width, int precision, int size);
+int handle_print(const char *fmt, int *i,
+va_list list, char buffer[], int flags, int width, int precision, int size);
 /*function to print string in reverse */
-int print_char(va_list types, char buffer[], int flags, int width, int precision, int size);
-int print_string(va_list types, char buffer[], int flags, int width, int precison, int size);
-int print_percent(va_list types, char buffer[], int flags, int width, int precision, int size);
+int print_char(va_list types, char buffer[],
+int flags, int width, int precision, int size);
+int print_string(va_list types, char buffer[], int flags,
+		int width, int precison, int size);
+int print_percent(va_list types, char buffer[], int flags,
+		int width, int precision, int size);
 
 /*function to print numbers */
 
