@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include<stdarg.h>
 #include<unistd.h>
+
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
@@ -41,5 +42,12 @@ struct fmt
 typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
+/* Funtions to hundle */
+int get_flags(const char *format, int *j);
+int get_width(const char *format, int *j, va_list list);
+int get_precision(const char *format, int *j, va_list list);
+int get_size(const char *format, int *j);
+
+/*function to print string in reverse */
 
 #endif
