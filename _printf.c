@@ -7,10 +7,10 @@ void print_buffer(char buffer[], int *buff_ind);
 /**
  * _printf - Printf function
  * @format: format
- * @get_flags: input value
- * @get_width :input value
- * @get_size : input value
- * @get_precision : input value 
+ * @get_flags -  return flags
+ * @get_width - return width
+ * @get_size - return size
+ * @get_precision -return precison
  * Return: Printed chars
  */
 
