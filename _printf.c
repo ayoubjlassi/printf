@@ -7,15 +7,17 @@ void print_buffer(char buffer[], int *buff_ind);
 /**
  * _printf - Printf function
  * @format: format
+ * @get_flags: input value
+ * @get_width :input value
+ * @get_size : input value
+ * @get_precision : input value 
  * Return: Printed chars
  */
 
 int _printf(const char *format, ...)
 {
 int j, printed = 0, printed_chars = 0;
-
 int flags, width, precision, size, buff_ind = 0;
-
 va_list list;
 
 char buffer[BUFF_SIZE];
@@ -46,13 +48,14 @@ width = get_width(format, &j, list);
 precision = get_precision(format, &j, list);
 
 size = get_size(format, &j);
+
 ++j;
+
 printed = handle_print(format, &j, list, buffer, flags,
 		width, precision, size);
 		if (printed == -1)
 			return (-1);
 		printed_chars += printed;
-
 	}
 }
 print_buffer(buffer, &buff_ind);
