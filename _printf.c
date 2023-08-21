@@ -1,20 +1,23 @@
 #include "main.h"
 #include <stdio.h>
+#include<string.h>
 
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
- * _printf - printf function
+ * _printf - Printf function
  * @format: format
+ * @get_flags -  return flags
+ * @get_width - return width
+ * @get_size - return size
+ * @get_precision -return precison
  * Return: Printed chars
  */
 
 int _printf(const char *format, ...)
 {
 int j, printed = 0, printed_chars = 0;
-
 int flags, width, precision, size, buff_ind = 0;
-
 va_list list;
 
 char buffer[BUFF_SIZE];
@@ -37,6 +40,7 @@ printed_chars++;
 else
 {
 print_buffer(buffer, &buff_ind);
+
 flags = get_flags(format, &j);
 
 width = get_width(format, &j, list);
@@ -44,13 +48,14 @@ width = get_width(format, &j, list);
 precision = get_precision(format, &j, list);
 
 size = get_size(format, &j);
+
 ++j;
+
 printed = handle_print(format, &j, list, buffer, flags,
 		width, precision, size);
 		if (printed == -1)
 			return (-1);
 		printed_chars += printed;
-
 	}
 }
 print_buffer(buffer, &buff_ind);
