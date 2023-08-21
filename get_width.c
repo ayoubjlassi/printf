@@ -4,7 +4,7 @@
  * @format : a string
  * @j : a list
  * @list : a list
- * Rteurn: width
+ * Return: return width
  */
 int get_width(const char *format, int *j, va_list list)
 {
@@ -13,7 +13,8 @@ int get_width(const char *format, int *j, va_list list)
 
 	for (curr_j = *j + 1; format[curr_j] != '\0'; curr_j++)
 	{
-		if (is_digit(format[curr_j]))
+		if
+		(is_digit(format[curr_j]))
 		{
 				width *= 10;
 				width += format[curr_j] - '0';
