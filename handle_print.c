@@ -14,7 +14,7 @@
 int handle_print(const char *f, int *ind, va_list list,
 char buffer[], int flags, int width, int precision, int size)
 {
-	int j, unknow len = 0, printed_chars = -1;
+	int i, unknow_len = 0, printed_chars = -1;
 	f_t f_types[] = {{'c', print_char}, {'s', print_string},
 {'%', print_percent}, {'c', print_char}, {'i', print_int}, {'d', print_int},
 {'b', print_binary}, {'u', print_unsigned},
