@@ -172,7 +172,8 @@ int write_unsgnd(int is_negative, int ind,
 		length++;
 	}
 
-	if ((flags & F_ZERO) && !(flags & F_MINUS))
+if
+((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
 
 
@@ -180,8 +181,7 @@ int write_unsgnd(int is_negative, int ind,
 	{
 		for (i = 0; i < width - length; i++)
 			buffer[i] = padd;
-
-		buffer[i] = '\0';
+buffer[i] = '\0';
 
 		if (flags & F_MINUS) /* Asign extra char to left of buffer [buffer>padd]*/
 		{
@@ -192,11 +192,8 @@ int write_unsgnd(int is_negative, int ind,
 			return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
 		}
 	}
-
-	return (write(1, &buffer[ind], length));
+return (write(1, &buffer[ind], length));
 }
-
-
 /**
  * write_pointer - Write a memory address
  * @buffer: Arrays of chars
